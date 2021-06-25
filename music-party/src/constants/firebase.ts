@@ -1,10 +1,4 @@
-import React, { FC } from "react";
-import ReactDom from "react-dom";
-
 import firebase from "firebase/app";
-import "firebase/firestore";
-import "firebase/auth";
-
 const firebaseConfig = {
   apiKey: "AIzaSyCfySRLlIZfaOI_OmcfLIbP7IoNfCqwjBo",
   authDomain: "musicpartyapp.firebaseapp.com",
@@ -18,13 +12,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
+const auth = firebase.auth();
 
-const App: FC = () => {
-  return <h1>Music Party</h1>;
-};
-
-const render = () => {
-  ReactDom.render(<App />, document.getElementById("root"));
-};
-
-render();
+export { db, auth };
